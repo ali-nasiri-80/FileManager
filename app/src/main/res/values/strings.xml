@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="filemanager">FileManager</string>
+    <string name="search_bar_text">search something...</string>
+</resources>
