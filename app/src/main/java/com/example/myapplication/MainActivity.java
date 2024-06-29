@@ -17,9 +17,12 @@ public class MainActivity extends AppCompatActivity implements AddNewFolderDialo
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        File externalFilesDir = getExternalFilesDir(null);
-        FileListFragment fileListFragment=new FileListFragment();
-        listFile(externalFilesDir.getPath(),false);
+        if(StorageHelper.isExternalStorageReadable()){
+            File externalFilesDir = getExternalFilesDir(null);
+            FileListFragment fileListFragment=new FileListFragment();
+            listFile(externalFilesDir.getPath(),false);
+        }
+
 
         findViewById(R.id.iv_main_addNewFolder).setOnClickListener(new View.OnClickListener() {
             @Override
